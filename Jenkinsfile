@@ -18,6 +18,8 @@ pipeline {
 			  script {
 				  env.JAVA_HOME="${tool 'jdk8'}"
 				  env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
+				  
+				  exit 1
 				   
 				  // Run the maven build
 				  if (isUnix()) {
@@ -37,5 +39,10 @@ pipeline {
 		     }
 		  }
 	   }
+   }
+   post {
+	always {
+		echo "All done"
+	}
    }
 }
