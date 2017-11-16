@@ -43,6 +43,7 @@ pipeline {
    post {
 	always {
 		echo "All done"
+		mail to: 'eduardofer@meta4.com", subject: "Test jenkins", body: "Done with build ${env.BUILD_URL)"
 	}
    }
 }
